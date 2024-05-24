@@ -61,8 +61,8 @@ function ProducDetailsPage() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "white",
-    flex: 1,
     paddingHorizontal: 16,
+    height: '100%'
   },
   image: {
     width: "100%",
