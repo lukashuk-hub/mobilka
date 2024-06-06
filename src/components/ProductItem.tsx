@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "normal",
     marginVertical: 16,
-    flex: 1,
+    height: "100%",
   },
   image: {
     width: "100%",

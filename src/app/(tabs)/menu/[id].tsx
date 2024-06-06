@@ -5,15 +5,17 @@ import defaultPizzaImage from "../../../components/ProductItem";
 import Colors from "../../../constants/Colors";
 import { useState } from "react";
 import Button from '../../../components/Button'
+import { useCart } from "@/src/provider/CartProvider";
 
 const sizes = ["S", "M", "L", "XL"];
 
 function ProducDetailsPage() {
   const { id } = useLocalSearchParams();
+  const {addItem} = useCart();
   const [selectedSize, setSelectedSize] = useState("M");
 
   const addToCart = () => {
-
+    addItem(product, selectedSize)
   };
 
   const product = products.find((p) => p.id.toString() === id);
@@ -25,7 +27,7 @@ function ProducDetailsPage() {
     <View style={styles.container}>
       <Stack.Screen options={{ title: product.name }} />
       <Image
-        source={{ uri: product.image || defaultPizzaImage }}
+        source= {{ uri: product.image || defaultPizzaImage }}
         style={styles.image}
       />
 
